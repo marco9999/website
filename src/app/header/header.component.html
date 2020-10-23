@@ -1,7 +1,12 @@
-<div [ngClass]="'header'" fxLayout="row" fxLayoutAlign="space-evenly start">
+<div [ngClass]="'container'" fxLayout="row" fxLayoutAlign="space-between start">
     <div fxFlexAlign="center">
-        <div [ngClass]="'mat-body-strong name'">Marco Satti</div>
-        <div>Software Engineer & Programmer</div>
+        <div fxLayout="row" fxLayoutAlign="center start">
+            <img [ngClass]="'avatar'" fxFlexAlign="center" src="{{ imgData }}" alt="" />
+            <div fxFlexAlign="center">
+                <div [ngClass]="'mat-body-strong name'">Marco Satti</div>
+                <div>Software Engineer & Programmer</div>
+            </div>
+        </div>
     </div>
     <nav fxFlexAlign="center">
         <button mat-button color="primary" routerLink="/blog">BLOG</button>

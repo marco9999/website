@@ -1,6 +1,8 @@
-<div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px">
+<div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="20px">
     <section [ngClass]="'container'">
-        test
+        <app-blog-detail [blogId]="blogId$ | async"></app-blog-detail>
     </section>
-    <nav>side nav bar</nav>
+    <nav>
+        <app-blog-nav></app-blog-nav>
+    </nav>
 </div>

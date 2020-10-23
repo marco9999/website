@@ -1,0 +1,10 @@
+<div [ngClass]="'title-container'">
+    <div>
+        <mat-icon [inline]="true" [ngClass]="'article-icon title-font'">article</mat-icon>
+        <span [ngClass]="'title title-font'">{{ blog.title }}</span>
+    </div>
+    <h4 [ngClass]="'subtitle'">{{ blog.timestamp | date:'full' }}</h4>
+</div>
+<article [ngClass]="'article'">
+    <markdown [data]="blog.markdown"></markdown>
+</article>

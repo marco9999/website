@@ -1,0 +1,28 @@
+.article-icon {
+    margin-right: 3px;
+}
+
+.title-font {
+    font-weight: 600 !important;
+    font-size: 32px !important;
+    vertical-align: top;
+}
+
+.title {
+    margin: 0px;
+}
+
+.subtitle {
+    margin: 0px;
+    margin-top: 12px;
+    margin-left: 38px;
+}
+
+.title-container {
+    margin-bottom: 32px;
+}
+
+.article {
+    margin-left: 38px;
+    margin-right: 38px;
+}

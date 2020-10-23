@@ -8,6 +8,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatIconModule } from '@angular/material/icon';
+import { MarkdownModule } from 'ngx-markdown';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BlogComponent } from './blog/blog.component';
@@ -39,7 +43,11 @@ import { BlogNavComponent } from './blog-nav/blog-nav.component';
         MatButtonModule,
         MatDividerModule,
         MatSidenavModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatCardModule,
+        MatTreeModule,
+        MatIconModule,
+        MarkdownModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]
