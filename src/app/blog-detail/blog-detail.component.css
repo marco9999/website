@@ -1,11 +1,12 @@
 .article-icon {
-    margin-right: 3px;
+    margin-right: 8px;
+    vertical-align: top;
 }
 
 .title-font {
     font-weight: 600 !important;
     font-size: 32px !important;
-    vertical-align: top;
+    line-height: normal !important;
 }
 
 .title {
@@ -14,8 +15,7 @@
 
 .subtitle {
     margin: 0px;
-    margin-top: 12px;
-    margin-left: 38px;
+    margin-left: 42px;
 }
 
 .title-container {
@@ -23,6 +23,5 @@
 }
 
 .article {
-    margin-left: 38px;
-    margin-right: 38px;
+    margin-left: 42px;
 }

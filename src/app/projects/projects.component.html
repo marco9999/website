@@ -1,0 +1,20 @@
+<div [ngClass]="'container'" fxLayout="row wrap" fxLayoutAlign="start start">
+    <mat-card *ngFor="let project of projects$ | async" [ngClass]="'card'" fxLayout="column" fxLayoutAlign="start start">
+        <div class="header">
+            <mat-card-title>
+                <mat-icon [inline]="true" class="title title-icon">topic</mat-icon>
+                <span class="title"><a href="{{ project.url }}">{{ project.title }}</a></span>
+            </mat-card-title>
+            <mat-card-subtitle>{{ project.description }}</mat-card-subtitle>
+        </div>
+
+        <div class="main-image-container">
+            <img class="main-image" src="{{ project.imageUrl }}" alt="{{ project.title }}">
+        </div>
+
+        <div class="footer">
+            <mat-icon [inline]="true" class="last-updated last-updated-icon">update</mat-icon>
+            <span class="last-updated">Last Updated: {{ project.lastUpdated | date:'short' }}</span>
+        </div>
+    </mat-card>
+</div>

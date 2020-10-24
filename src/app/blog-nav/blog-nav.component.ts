@@ -10,16 +10,22 @@ import { BlogService } from '../common/services/blog.service';
     styleUrls: ['blog-nav.component.css']
 })
 export class BlogNavComponent implements OnInit {
-    treeControl = new NestedTreeControl<BlogNavNode>(nodeChildren);
-    dataSource = new MatTreeNestedDataSource<BlogNavNode>();
-  
+    treeControl: NestedTreeControl<BlogNavNode> | null = null;
+    dataSource: MatTreeNestedDataSource<BlogNavNode> | null = null;
+
     constructor(private blogService: BlogService) {
     }
 
     ngOnInit(): void {
-        console.log("Called");
-        let data = this.blogService.getBlogHeaders();
-        this.dataSource.data = makeNodes(data);
+        this.blogService.getBlogHeaders().subscribe((data) => {
+            this.treeControl = new NestedTreeControl<BlogNavNode>(nodeChildren);
+            this.dataSource = new MatTreeNestedDataSource<BlogNavNode>();
+            this.dataSource.data = makeNodes(data);
+        });
+    }
+
+    isReady(): boolean {
+        return (this.treeControl !== null) && (this.dataSource !== null);
     }
 
     treeNodeHasChild(_: number, node: BlogNavNode): boolean {

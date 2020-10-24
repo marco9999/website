@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProjectsService } from '../common/services/projects.service';
+import { ProjectItem } from '../common/types/project';
 
 @Component({
-  selector: 'app-projects',
-  template: `
-    <p>
-      projects works!
-    </p>
-  `,
-  styles: [
-  ]
+    selector: 'app-projects',
+    templateUrl: 'projects.component.html',
+    styleUrls: ['projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+    projects$: Observable<ProjectItem[]>;
 
-  constructor() { }
+    constructor(private projectsService: ProjectsService) {
+    }
 
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {
+        this.projects$ = this.projectsService.getProjects();
+    }
 }

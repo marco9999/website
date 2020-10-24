@@ -9,7 +9,7 @@ import { BlogItem } from '../common/types/blog';
 })
 export class BlogDetailComponent implements OnInit, OnChanges {
     @Input() blogId: string | undefined;
-    blog: BlogItem;
+    blog: BlogItem | null = null;
 
     constructor(private blogService: BlogService) {
     }
@@ -24,6 +24,8 @@ export class BlogDetailComponent implements OnInit, OnChanges {
     }
 
     handleBlog(): void {
-        this.blog = this.blogService.getBlog({ id: this.blogId });
+        this.blogService.getBlog({ id: this.blogId }).subscribe((blog) => { 
+            this.blog = blog; 
+        });
     }
 }

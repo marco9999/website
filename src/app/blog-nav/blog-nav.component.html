@@ -1,5 +1,5 @@
 <mat-card [ngClass]="'container'">
-    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" [ngClass]="'tree-root'">
+    <mat-tree *ngIf="isReady()" [dataSource]="dataSource" [treeControl]="treeControl" [ngClass]="'tree-root'">
         <!-- This is the tree node template for leaf nodes -->
         <mat-tree-node *matTreeNodeDef="let node" [ngClass]="'mat-tree-node tree-leaf'">
             <li [ngClass]="'tree'"><a [routerLink]="getLink(node)">{{node.name}}</a></li>

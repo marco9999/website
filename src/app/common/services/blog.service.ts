@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DateTime } from 'luxon';
+import { Observable, of } from 'rxjs';
 import { BlogItem, BlogItemRequest } from '../types/blog';
 import { BlogNavItem } from '../types/blog-nav';
 
@@ -66,17 +67,17 @@ export class BlogService {
     constructor() {
     }
 
-    getBlog(request: BlogItemRequest): BlogItem {
+    getBlog(request: BlogItemRequest): Observable<BlogItem> {
         let requestId = (+request.id) || 1;
         console.warn(`Not implemented properly: ${requestId}`);
-        return {
+        return of({
             ...BLOG_DEMO.find((i) => i.id === requestId),
             markdown: BLOG_MARKDOWN_DEMO
-        };
+        });
     }
 
-    getBlogHeaders(): BlogNavItem[] { 
+    getBlogHeaders(): Observable<BlogNavItem[]> { 
         console.warn("Not implemented properly headers");
-        return BLOG_DEMO;
+        return of(BLOG_DEMO);
     }
 }
