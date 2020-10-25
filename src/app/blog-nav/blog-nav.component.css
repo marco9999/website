@@ -1,6 +1,5 @@
 .container {
-    max-width: 350px;
-    min-width: 260px;
+    width: 340px;
 }
 
 .tree-root {

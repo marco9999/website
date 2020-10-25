@@ -18,7 +18,6 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutMeComponent } from './about-me/about-me.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
 import { HeaderComponent } from './header/header.component';
 import { BlogNavComponent } from './blog-nav/blog-nav.component';
 
@@ -29,7 +28,6 @@ import { BlogNavComponent } from './blog-nav/blog-nav.component';
         BlogDetailComponent,
         ProjectsComponent,
         AboutMeComponent,
-        ContactMeComponent,
         HeaderComponent,
         BlogNavComponent
     ],

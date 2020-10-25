@@ -1,15 +1,15 @@
-<mat-card [ngClass]="'container'">
-    <mat-tree *ngIf="isReady()" [dataSource]="dataSource" [treeControl]="treeControl" [ngClass]="'tree-root'">
+<mat-card class="container">
+    <mat-tree *ngIf="isReady()" [dataSource]="dataSource" [treeControl]="treeControl" class="tree-root">
         <!-- This is the tree node template for leaf nodes -->
-        <mat-tree-node *matTreeNodeDef="let node" [ngClass]="'mat-tree-node tree-leaf'">
-            <li [ngClass]="'tree'"><a [routerLink]="getLink(node)">{{node.name}}</a></li>
+        <mat-tree-node *matTreeNodeDef="let node" class="mat-tree-node tree-leaf">
+            <li class="tree"><a [routerLink]="getLink(node)">{{node.name}}</a></li>
         </mat-tree-node>
 
         <!-- This is the tree node template for expandable nodes -->
         <mat-nested-tree-node *matTreeNodeDef="let node; when: treeNodeHasChild">
-            <li [ngClass]="'tree mat-caption'">
+            <li class="tree mat-caption">
                 {{node.name}}
-                <ul [ngClass]="'tree'">
+                <ul class="tree">
                     <ng-container matTreeNodeOutlet></ng-container>
                 </ul>
             </li>
