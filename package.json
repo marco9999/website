@@ -1,6 +1,6 @@
 {
-  "name": "website",
-  "version": "0.0.0",
+  "name": "website-frontend",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +9,7 @@
     "lint": "ng lint"
   },
   "private": true,
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "@angular/animations": "~10.1.5",
     "@angular/cdk": "^10.2.5",
@@ -22,7 +23,6 @@
     "@angular/platform-browser-dynamic": "~10.1.5",
     "@angular/router": "~10.1.5",
     "@types/luxon": "^1.25.0",
-    "angular-in-memory-web-api": "^0.11.0",
     "luxon": "^1.25.0",
     "ngx-markdown": "^10.1.1",
     "rxjs": "~6.6.0",

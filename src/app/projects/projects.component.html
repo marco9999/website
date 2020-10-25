@@ -1,5 +1,5 @@
-<div [ngClass]="'container'" fxLayout="row wrap" fxLayoutAlign="start start">
-    <mat-card *ngFor="let project of projects$ | async" [ngClass]="'card'" fxLayout="column" fxLayoutAlign="start start">
+<div class="container" fxLayout="row wrap" fxLayoutAlign="start start">
+    <mat-card *ngFor="let project of projects$ | async" class="card" fxLayout="column" fxLayoutAlign="start start">
         <div class="header">
             <mat-card-title>
                 <mat-icon [inline]="true" class="title title-icon">topic</mat-icon>
