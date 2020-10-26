@@ -1,10 +1,25 @@
-.container {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    width: 900px;
-}
-
 section {
     margin-bottom: 35px;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.social-media-container {
+    width: 300px;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.social-media-loading {
+    display: none !important;
+}
+
+.social-media-loaded {
+    display: none !important;
+}
+
+.social-media-divider {
+    width: 100%;
 }
