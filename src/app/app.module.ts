@@ -7,7 +7,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,6 +20,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { HeaderComponent } from './header/header.component';
 import { BlogNavComponent } from './blog-nav/blog-nav.component';
+import { AboutMeSocialMediaComponent } from './about-me-social-media/about-me-social-media.component';
+import { AboutMeDetailComponent } from './about-me-detail/about-me-detail.component';
+import { ProjectsDetailComponent } from './projects-detail/projects-detail.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +32,10 @@ import { BlogNavComponent } from './blog-nav/blog-nav.component';
         ProjectsComponent,
         AboutMeComponent,
         HeaderComponent,
-        BlogNavComponent
+        BlogNavComponent,
+        AboutMeSocialMediaComponent,
+        AboutMeDetailComponent,
+        ProjectsDetailComponent
     ],
     imports: [
         BrowserModule,
@@ -42,7 +47,6 @@ import { BlogNavComponent } from './blog-nav/blog-nav.component';
         MatButtonModule,
         MatDividerModule,
         MatSidenavModule,
-        FlexLayoutModule,
         MatCardModule,
         MatTreeModule,
         MatIconModule,

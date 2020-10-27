@@ -1,25 +1,9 @@
-section {
-    margin-bottom: 35px;
+.viewport {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
 }
 
-.container {
-    max-width: 800px;
-}
-
-.social-media-container {
-    width: 300px;
-    min-height: 400px;
-    overflow: hidden;
-}
-
-.social-media-loading {
-    display: none !important;
-}
-
-.social-media-loaded {
-    display: none !important;
-}
-
-.social-media-divider {
+.main-container {
     width: 100%;
 }

@@ -1,8 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="40px">
-    <section [ngClass]="'container'">
-        <app-blog-detail [blogId]="blogId$ | async"></app-blog-detail>
-    </section>
-    <nav>
-        <app-blog-nav></app-blog-nav>
-    </nav>
+<div class="viewport">
+    <app-blog-detail [blogId]="blogId$ | async" class="main-container"></app-blog-detail>
+    <app-blog-nav></app-blog-nav>
 </div>

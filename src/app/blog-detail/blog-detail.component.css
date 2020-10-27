@@ -1,27 +1,27 @@
 .article-icon {
     margin-right: 8px;
-    vertical-align: top;
-}
-
-.title-font {
+    font-size: 52px !important;
     font-weight: 600 !important;
-    font-size: 32px !important;
     line-height: normal !important;
 }
 
 .title {
     margin: 0px;
+    font-weight: 600 !important;
+    font-size: 32px !important;
+    line-height: normal !important;
+    margin: 0px !important;
 }
 
 .subtitle {
-    margin: 0px;
-    margin-left: 42px;
+    line-height: normal !important;
+    margin: 0px !important;
 }
 
 .title-container {
-    margin-bottom: 32px;
+    display: inline-block;
 }
 
-.article {
-    margin-left: 42px;
+.header {
+    margin-bottom: 20px;
 }

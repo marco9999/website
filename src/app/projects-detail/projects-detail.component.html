@@ -1,0 +1,21 @@
+<mat-card class="container">
+    <div class="header">
+        <mat-card-title>
+            <mat-icon [inline]="true" class="title title-icon">topic</mat-icon>
+            <span class="title"><a href="{{ project.url }}">{{ project.title }}</a></span>
+        </mat-card-title>
+        <mat-card-subtitle>{{ (project.description || "No description available") }}</mat-card-subtitle>
+    </div>
+
+    <div *ngIf="project.imageUrl" class="image-container">
+        <img class="image" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
+    </div>
+    <div *ngIf="!project.imageUrl" class="no-image-container">
+        <p class="no-image">No preview image</p>
+    </div>
+
+    <div class="footer">
+        <mat-icon [inline]="true" class="last-updated last-updated-icon">update</mat-icon>
+        <span class="last-updated">Last Updated: {{ project.lastUpdated | date:'short' }}</span>
+    </div>
+</mat-card>

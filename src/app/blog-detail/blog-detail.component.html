@@ -1,12 +1,12 @@
-<ng-container *ngIf="blog">
-    <div [ngClass]="'title-container'">
-        <div>
-            <mat-icon [inline]="true" [ngClass]="'article-icon title-font'">article</mat-icon>
-            <span [ngClass]="'title title-font'">{{ blog.title }}</span>
+<section *ngIf="blog">
+    <div class="header">
+        <mat-icon [inline]="true" class="article-icon">article</mat-icon>
+        <div class="title-container">
+            <div class="title">{{ blog.title }}</div>
+            <h4 class="subtitle">{{ blog.timestamp | date:'full' }}</h4>
         </div>
-        <h4 [ngClass]="'subtitle'">{{ blog.timestamp | date:'full' }}</h4>
     </div>
-    <article [ngClass]="'article'">
+    <article>
         <markdown [data]="blog.markdown"></markdown>
     </article>
-</ng-container>
+</section>

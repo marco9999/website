@@ -1,0 +1,23 @@
+.social-media-container {
+    width: 300px;
+    min-height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-media-loading {
+    display: none !important;
+}
+
+.social-media-loaded {
+    display: none !important;
+}
+
+.social-media-divider {
+    width: 100%;
+    margin: 0px;
+}
