@@ -13,7 +13,7 @@ export class AboutMeSocialMediaComponent implements OnInit {
     loadingOverride: boolean = false;
 
     perfTraceShowPending = true;
-    perfTraceInstant: number | null = performance.now();
+    perfTraceInstant: number = performance.now();
 
     constructor() {
     }
