@@ -1,8 +1,8 @@
-FROM debian:bullseye
+FROM debian:bullseye-slim
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
-RUN apt-get -y install nodejs npm nginx gettext-base
+RUN apt-get -y install --no-install-recommends nodejs npm nginx gettext-base
 
 WORKDIR /app
 
