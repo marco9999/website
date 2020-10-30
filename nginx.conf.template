@@ -1,0 +1,18 @@
+daemon off;
+
+error_log stderr;
+
+events {
+}
+
+http {
+    server {
+        listen $PORT;
+
+        root $PWD/dist/website-frontend;
+
+        location / {
+            try_files $uri /index.html;
+        }
+    }
+}
