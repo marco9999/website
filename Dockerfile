@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . .
 
 RUN npm install
-RUN npm run ng build --prod
+RUN npm run ng build -- --prod
 
 ENV PORT=80
 
