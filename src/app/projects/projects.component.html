@@ -1,3 +1,6 @@
 <div class="container">
-    <app-projects-detail *ngFor="let project of projects$ | async" [project]="project"></app-projects-detail>
+    <p *ngIf="projects === null">
+        Loading...
+    </p>
+    <app-projects-detail *ngIf="projects !== null" *ngFor="let project of projects" [project]="project"></app-projects-detail>
 </div>
