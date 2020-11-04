@@ -1,15 +1,24 @@
-FROM debian:bullseye-slim
+FROM debian:buster-slim
 
-RUN apt-get -y update
-RUN apt-get -y upgrade
-RUN apt-get -y install --no-install-recommends nodejs npm nginx gettext-base
+RUN apt-get update && apt-get -y install --no-install-recommends \
+    ca-certificates \
+    curl \
+    nginx-light \
+    gettext-base \ 
+    lsb-release \
+    gnupg
+
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+
+RUN apt-get update && apt-get -y install --no-install-recommends \
+    nodejs
 
 WORKDIR /app
 
 COPY . .
 
 RUN npm install
-RUN npm run ng build -- --prod
+RUN npm run ng -- build --prod
 
 ENV PORT=80
 
