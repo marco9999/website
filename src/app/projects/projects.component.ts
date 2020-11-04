@@ -27,4 +27,8 @@ export class ProjectsComponent implements OnInit {
             });
         });
     }
+
+    isReady(): boolean {
+        return this.projects !== null;
+    }
 }
