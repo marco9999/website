@@ -1,5 +1,6 @@
 <nav>
     <mat-card class="container">
+        <p *ngIf="!isReady()">Loading...</p>
         <mat-tree *ngIf="isReady()" [dataSource]="dataSource" [treeControl]="treeControl" class="tree-root">
             <!-- Leaf nodes template -->
             <mat-tree-node *matTreeNodeDef="let node" class="mat-tree-node tree-leaf">

@@ -1,3 +1,6 @@
+<section *ngIf="!blog">
+    <p>Loading...</p>
+</section>
 <section *ngIf="blog">
     <div class="header">
         <mat-icon [inline]="true" class="article-icon">article</mat-icon>
@@ -7,6 +10,6 @@
         </div>
     </div>
     <article>
-        <markdown [data]="blog.markdown"></markdown>
+        <markdown [data]="blog.body"></markdown>
     </article>
 </section>

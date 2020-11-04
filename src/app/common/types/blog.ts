@@ -8,5 +8,12 @@ export interface BlogItem {
     id: number, 
     title: string,
     timestamp: DateTime,
-    markdown: string
+    body: string
+}
+
+export interface ApiBlogItem {
+    id: number, 
+    title: string,
+    timestamp: string,
+    body: string
 }

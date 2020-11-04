@@ -1,69 +1,29 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DateTime } from 'luxon';
-import { Observable, of } from 'rxjs';
-import { ProjectItem } from '../types/project';
-
-const PROJECTS_DEMO: ProjectItem[] = [
-    { 
-        title: "psx-rs", 
-        description: null, 
-        lastUpdated: DateTime.utc(2020, 8, 21, 1, 0, 0, 0), 
-        imageUrl: null,
-        url: "https://github.com/marcosatti/psx-rs" 
-    },
-    { 
-        title: "psx-rs", 
-        description: "Playstation 1 emulator written in Rust", 
-        lastUpdated: DateTime.utc(2020, 8, 21, 1, 0, 0, 0), 
-        imageUrl: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-        url: "https://github.com/marcosatti/psx-rs" 
-    },
-    { 
-        title: "psx-rs", 
-        description: "Playstation 1 emulator written in Rust", 
-        lastUpdated: DateTime.utc(2020, 8, 21, 1, 0, 0, 0), 
-        imageUrl: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-        url: "https://github.com/marcosatti/psx-rs" 
-    },
-    { 
-        title: "psx-rs", 
-        description: "Playstation 1 emulator written in Rust", 
-        lastUpdated: DateTime.utc(2020, 8, 21, 1, 0, 0, 0), 
-        imageUrl: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-        url: "https://github.com/marcosatti/psx-rs" 
-    },
-    { 
-        title: "psx-rs", 
-        description: "Playstation 1 emulator written in Rust", 
-        lastUpdated: DateTime.utc(2020, 8, 21, 1, 0, 0, 0), 
-        imageUrl: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-        url: "https://github.com/marcosatti/psx-rs" 
-    },
-    { 
-        title: "psx-rs", 
-        description: "Playstation 1 emulator written in Rust", 
-        lastUpdated: DateTime.utc(2020, 8, 21, 1, 0, 0, 0), 
-        imageUrl: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-        url: "https://github.com/marcosatti/psx-rs" 
-    },
-    { 
-        title: "psx-rs", 
-        description: "Playstation 1 emulator written in Rust", 
-        lastUpdated: DateTime.utc(2020, 8, 21, 1, 0, 0, 0), 
-        imageUrl: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-        url: "https://github.com/marcosatti/psx-rs" 
-    }
-];
-
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ApiProjectItem, ProjectItem } from '../types/project';
+import { ConfigService } from './config.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ProjectsService {
-    constructor() {
+    constructor(private http: HttpClient, private config: ConfigService) {
     }
 
     getProjects(): Observable<ProjectItem[]> {
-        return of(PROJECTS_DEMO);
+        let url = this.config.getApiConfig().baseUrl + "/project"
+        return this.http.get<ApiProjectItem[]>(url, { observe: "body", responseType: "json" }).pipe<ProjectItem[]>(
+            map((projects) => { 
+                return projects.map((project) => {
+                    return { 
+                        ...project,
+                        lastUpdated: DateTime.fromISO(project.lastUpdated),
+                    }; 
+                });
+            })
+        );
     }
 }

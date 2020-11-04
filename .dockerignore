@@ -7,3 +7,5 @@ README.md
 LICENSE.md
 dist
 tmp
+
+src/assets/api-config.json

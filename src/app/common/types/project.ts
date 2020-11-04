@@ -7,3 +7,11 @@ export interface ProjectItem {
     imageUrl: string | null,
     url: string
 }
+
+export interface ApiProjectItem {
+    title: string,
+    description: string | null,
+    lastUpdated: string,
+    imageUrl: string | null,
+    url: string
+}
