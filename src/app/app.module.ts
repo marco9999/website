@@ -24,6 +24,7 @@ import { AboutMeSocialMediaComponent } from './about-me-social-media/about-me-so
 import { AboutMeDetailComponent } from './about-me-detail/about-me-detail.component';
 import { ProjectsDetailComponent } from './projects-detail/projects-detail.component';
 import { ConfigService } from './common/services/config.service';
+import { BlogMetaComponent } from './blog-meta/blog-meta.component';
 
 export function configServiceProviderFactory(config: ConfigService) {
     return () => { 
@@ -42,7 +43,8 @@ export function configServiceProviderFactory(config: ConfigService) {
         BlogNavComponent,
         AboutMeSocialMediaComponent,
         AboutMeDetailComponent,
-        ProjectsDetailComponent
+        ProjectsDetailComponent,
+        BlogMetaComponent
     ],
     imports: [
         BrowserModule,

@@ -1,4 +1,7 @@
 <div class="viewport">
     <app-blog-detail [blogId]="blogId$ | async" class="main-container"></app-blog-detail>
-    <app-blog-nav></app-blog-nav>
+    <div class="side-bar">
+        <app-blog-nav></app-blog-nav>
+        <app-blog-meta></app-blog-meta>
+    </div>
 </div>
