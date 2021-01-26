@@ -5,15 +5,15 @@ import { BlogComponent } from './blog/blog.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/blog', pathMatch: 'full' },
-    { path: 'blog', component: BlogComponent },
+    { path: '', redirectTo: 'blog/', pathMatch: 'full' },
+    { path: 'blog', redirectTo: 'blog/', pathMatch: 'full' },
     { path: 'blog/:id', component: BlogComponent },
     { path: 'projects', component: ProjectsComponent },
     { path: 'about-me', component: AboutMeComponent },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule {

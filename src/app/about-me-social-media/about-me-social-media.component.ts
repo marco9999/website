@@ -37,7 +37,7 @@ export class AboutMeSocialMediaComponent implements OnInit {
                             const htmlElement = element as HTMLElement;
                             htmlElement.style.boxShadow = "none";
                             this.hasLoadedGitHub = true;
-                            console.log("Github fixup applied");
+                            console.debug("Github fixup applied");
                             this.perfTracePostLoadingHook();
                             observer.disconnect();
                         });
@@ -62,7 +62,7 @@ export class AboutMeSocialMediaComponent implements OnInit {
                             const htmlElement = element as HTMLElement;
                             htmlElement.style.boxShadow = "none";
                             this.hasLoadedLinkedIn = true;
-                            console.log("LinkedIn fixup applied");
+                            console.debug("LinkedIn fixup applied");
                             this.perfTracePostLoadingHook();
                             observer.disconnect();
                         });
@@ -91,7 +91,7 @@ export class AboutMeSocialMediaComponent implements OnInit {
             this.loadingOverride = true;
 
             if (showMessage) {
-                console.log("Loading fallback required!");
+                console.debug("Loading fallback required!");
                 this.perfTracePostLoadingHook();
             }
         };
@@ -102,7 +102,7 @@ export class AboutMeSocialMediaComponent implements OnInit {
     perfTracePostLoadingHook(): void {
         if (this.isSocialMediaLoaded() && this.perfTraceShowPending) {
             const time = performance.now() - this.perfTraceInstant;
-            console.log(`Loading took ${time}ms`);
+            console.debug(`Loading took ${time}ms`);
             this.perfTraceShowPending = false;
         }
     }
