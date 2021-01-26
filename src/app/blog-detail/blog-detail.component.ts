@@ -26,6 +26,7 @@ export class BlogDetailComponent implements OnInit, OnChanges {
     handleBlog(): void {
         this.blogService.getBlog({ id: this.blogId }).subscribe((blog) => { 
             this.blog = blog; 
+            this.blogService.setCurrentBlog(this.blog.id);
         });
     }
 }

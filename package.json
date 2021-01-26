@@ -12,30 +12,31 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@angular/animations": "~10.1.5",
-    "@angular/cdk": "^10.2.5",
+    "@angular/cdk": "^10.2.7",
     "@angular/common": "~10.1.5",
     "@angular/compiler": "~10.1.5",
     "@angular/core": "~10.1.5",
     "@angular/forms": "~10.1.5",
-    "@angular/material": "^10.2.5",
+    "@angular/localize": "^11.1.0",
+    "@angular/material": "^10.2.7",
     "@angular/platform-browser": "~10.1.5",
     "@angular/platform-browser-dynamic": "~10.1.5",
     "@angular/router": "~10.1.5",
-    "@rocktimsaikia/github-card": "^2.0.0",
+    "@rocktimsaikia/github-card": "^2.1.1",
     "luxon": "^1.25.0",
     "ngx-markdown": "^10.1.1",
     "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
+    "tslib": "^2.1.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.5",
     "@angular/cli": "~10.1.5",
     "@angular/compiler-cli": "~10.1.5",
-    "@types/node": "^12.11.1",
-    "@types/luxon": "^1.25.0",
+    "@types/luxon": "^1.25.1",
+    "@types/node": "^12.19.15",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "typescript": "^4.0.5"
   }
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DateTime } from 'luxon';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApiBlogItem, BlogItem, BlogItemRequest } from '../types/blog';
 import { ApiBlogNavItem, BlogNavItem } from '../types/blog-nav';
@@ -11,6 +11,8 @@ import { ConfigService } from './config.service';
     providedIn: 'root'
 })
 export class BlogService {
+    private currentBlog: Subject<number> = new Subject<number>();
+
     constructor(private http: HttpClient, private config: ConfigService) {
     }
 
@@ -39,5 +41,13 @@ export class BlogService {
                 });
             })
         );
+    }
+
+    setCurrentBlog(blogId: number) {
+        this.currentBlog.next(blogId);
+    }
+
+    getCurrentBlog(): Observable<number> {
+        return this.currentBlog;
     }
 }

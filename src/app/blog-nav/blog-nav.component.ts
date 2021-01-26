@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { BlogNavItem, BlogNavNode } from '../common/types/blog-nav';
 import { BlogService } from '../common/services/blog.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-blog-nav',
@@ -10,6 +11,8 @@ import { BlogService } from '../common/services/blog.service';
     styleUrls: ['blog-nav.component.css']
 })
 export class BlogNavComponent implements OnInit {
+    currentBlogId: number | null = null;
+    currentBlogIdSubscription: Subscription | null = null;
     treeControl: NestedTreeControl<BlogNavNode> | null = null;
     dataSource: MatTreeNestedDataSource<BlogNavNode> | null = null;
 
@@ -22,6 +25,14 @@ export class BlogNavComponent implements OnInit {
             this.dataSource = new MatTreeNestedDataSource<BlogNavNode>();
             this.dataSource.data = makeNodes(data);
         });
+
+        this.currentBlogIdSubscription = this.blogService.getCurrentBlog().subscribe((blogId) => {
+            this.currentBlogId = blogId;
+        });
+    }
+
+    ngOnDestroy(): void {
+        this.currentBlogIdSubscription.unsubscribe();
     }
 
     isReady(): boolean {
@@ -34,6 +45,10 @@ export class BlogNavComponent implements OnInit {
 
     getLink(node: BlogNavNode): string {
         return `/blog/${node.id}`;
+    }
+
+    isCurrent(node: BlogNavNode): boolean {
+        return this.currentBlogId == node.id;
     }
 }
 

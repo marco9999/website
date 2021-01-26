@@ -4,7 +4,9 @@
         <mat-tree *ngIf="isReady()" [dataSource]="dataSource" [treeControl]="treeControl" class="tree-root">
             <!-- Leaf nodes template -->
             <mat-tree-node *matTreeNodeDef="let node" class="mat-tree-node tree-leaf">
-                <li class="tree"><a [routerLink]="getLink(node)">{{node.name}}</a></li>
+                <li class="tree">
+                    <a [routerLink]="getLink(node)"><div [ngClass]="{'bold': isCurrent(node)}">{{node.name}}</div></a>
+                </li>
             </mat-tree-node>
     
             <!-- Expandable nodes template -->

@@ -17,3 +17,7 @@
 .tree-leaf {
     min-height: 0px;
 }
+
+.bold {
+    font-weight: bold;
+}
