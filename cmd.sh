@@ -9,7 +9,7 @@ trap _term SIGTERM
 
 echo "Applying template files"
 envsubst '\$PWD \$PORT' < nginx.conf.template > nginx.conf
-envsubst '\$API_URL_BASE' < ./dist/website-frontend/assets/en-AU/api-config.json.template > ./dist/website-frontend/assets/api-config.json
+envsubst '\$API_URL_BASE' < ./dist/website-frontend/en-AU/assets/api-config.json.template > ./dist/website-frontend/en-AU/assets/api-config.json
 
 echo "Starting nginx"
 nginx -c $PWD/nginx.conf &
