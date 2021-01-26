@@ -37,7 +37,10 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "en-AU"
+        "sourceLocale": {
+          "code": "en-AU",
+          "baseHref": ""
+        }
       },
       "architect": {
         "build": {
@@ -48,7 +51,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -69,13 +72,14 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "localize": true,
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": false,
+              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
