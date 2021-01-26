@@ -6,6 +6,9 @@ events {
 }
 
 http {
+    include mime.types;
+    sendfile on;
+
     server {
         listen $PORT;
 
