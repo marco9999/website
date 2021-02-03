@@ -1,5 +1,9 @@
 .container {
     width: 300px;
+    box-sizing: border-box;
+}
+
+.sub-container {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;

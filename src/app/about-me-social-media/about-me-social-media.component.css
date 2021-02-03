@@ -1,5 +1,9 @@
-.social-media-container {
+.container {
     width: 300px;
+    box-sizing: border-box;
+}
+
+.social-media-container {
     min-height: 400px;
     overflow: hidden;
     display: flex;
