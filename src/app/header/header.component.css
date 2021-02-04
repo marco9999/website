@@ -23,6 +23,19 @@
     gap: 8px;
 }
 
+.sm-icons {
+    margin-left: 12px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+}
+
+.sm-icon {
+    width: 16px;
+    height: 16px;
+}
+
 a.nostyle:link,
 a.nostyle:visited {
     text-decoration: inherit;
